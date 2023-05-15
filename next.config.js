@@ -5,6 +5,7 @@ const nextConfig = {
   api: {
     bodyParser: false,
   },
+  basePath: 'https://hanibalgirmay.github.io/',
 };
 
 module.exports = nextConfig;
