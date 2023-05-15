@@ -3,21 +3,21 @@
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
+  async rewrite() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://hanibalgirmay.github.io/frontend-task/api/:path*',
+      },
+    ]
+  },
   trailingSlash: true,
-  output: "export",
+  
   api: {
     bodyParser: false,
   },
   reactStrictMode: true,
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/frontend-task/:path*',
-  //       destination: '/api/:path*',
-  //     },
-  //   ]
-  // },
-  basePath: isProd ? "https://hanibalgirmay.github.io/frontend-task/" : "",
+  basePath: isProd ? "/frontend-task" : "",
 };
 
 module.exports = nextConfig;
