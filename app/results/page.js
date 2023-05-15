@@ -45,7 +45,7 @@ const ProjectResult = () => {
   };
 
   const handleRoute = () => {
-    location.href = "/"
+    location.href = "/frontend-task"
   }
 
   useEffect(() => {

@@ -40,7 +40,7 @@ export default function Home() {
     })
       .then((res) => {
         console.log(res.json())
-        location.href = "/results"
+        location.href = "/frontend-task/results"
       })
       .catch((err) => console.error(err));
   };
