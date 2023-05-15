@@ -113,7 +113,7 @@ const ProjectResult = () => {
               <tbody className="divide-y divide-gray-200">
                 {data &&
                   data?.map((item, index) => (
-                    <tr>
+                    <tr key={index}>
                       <td className="px-6 py-4 text-sm font-medium text-gray-500 whitespace-nowrap">
                         {index + 1}
                       </td>
