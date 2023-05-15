@@ -5,6 +5,7 @@ const nextConfig = {
   api: {
     bodyParser: false,
   },
+  reactStrictMode: true,
   basePath: '/frontend-task',
 };
 
