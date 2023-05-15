@@ -6,6 +6,14 @@ const nextConfig = {
     bodyParser: false,
   },
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/frontend-task/:path*',
+        destination: '/api/:path*',
+      },
+    ]
+  },
   basePath: '/frontend-task',
 };
 
