@@ -3,21 +3,16 @@
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  async rewrite() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://hanibalgirmay.github.io/frontend-task/api/:path*',
-      },
-    ]
-  },
   trailingSlash: true,
-  
+  export: "out",
   api: {
     bodyParser: false,
   },
   reactStrictMode: true,
   basePath: isProd ? "/frontend-task" : "",
+  publicRuntimeConfig: {
+    API_URL: "https://hanibalgirmay.github.io/frontend-task/api"
+  }
 };
 
 module.exports = nextConfig;
