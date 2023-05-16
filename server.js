@@ -12,6 +12,11 @@ app.prepare().then(() => {
 
   server.use(express.json());
 
+  server.use(function (req, res, next) {
+    req.url = req.originalUrl.replace("/nextjs_custom_server/_next", "/_next");
+    next(); // be sure to let the next middleware handle the modified request.
+  });
+
   // Database
   mongoose
     .connect(
